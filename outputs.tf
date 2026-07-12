@@ -1,3 +1,7 @@
+output "marketplace_agreements_id" {
+  description = "Map of id values across all marketplace_agreements, keyed the same as var.marketplace_agreements"
+  value       = { for k, v in azurerm_marketplace_agreement.marketplace_agreements : k => v.id }
+}
 output "marketplace_agreements_license_text_link" {
   description = "Map of license_text_link values across all marketplace_agreements, keyed the same as var.marketplace_agreements"
   value       = { for k, v in azurerm_marketplace_agreement.marketplace_agreements : k => v.license_text_link }
